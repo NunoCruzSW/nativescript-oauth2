@@ -38,7 +38,7 @@
         "**/*"
     ],
     "files": [
-        "../src/delegate/delegate.ts",
+        "../src/delegate/delegate.d.ts",
     ],
     "exclude": [
         "../src/node_modules",

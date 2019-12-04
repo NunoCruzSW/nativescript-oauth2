@@ -16,14 +16,16 @@ export class LoginComponent {
 
   public onTapLogin() {
     this.authService
-        .tnsOauthLogin("identityServer")
-        .then((result: ITnsOAuthTokenResult) => {
-          console.log("back to login component with token " + result.accessToken);
-          this.routerExtensions
-              .navigate(["../authenticated"])
-              .then(() => console.log("navigated to /authenticated"))
-              .catch(err => console.log("error navigating to /authenticated: " + err));
-        })
-        .catch(e => console.log("Error: " + e));
+      .tnsOauthLogin("identityServer", "nunotest")
+      .then((result: ITnsOAuthTokenResult) => {
+        console.log("back to login component with token " + result.accessToken);
+        this.routerExtensions
+          .navigate(["../authenticated"])
+          .then(() => console.log("navigated to /authenticated"))
+          .catch(err =>
+            console.log("error navigating to /authenticated: " + err)
+          );
+      })
+      .catch(e => console.log("Error: " + e));
   }
 }
